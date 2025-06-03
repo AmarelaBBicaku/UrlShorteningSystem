@@ -35,11 +35,6 @@ CREATE TABLE urls (
     CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(user_id)
 );
 
-
-
-
-
-
 Project Structure
 url-shortener/
 ├── src/
