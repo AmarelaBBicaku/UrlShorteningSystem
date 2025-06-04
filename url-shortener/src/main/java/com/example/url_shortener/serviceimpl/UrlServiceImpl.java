@@ -120,7 +120,7 @@ public class UrlServiceImpl implements UrlService {
                 : DEFAULT_EXPIRATION_MINUTES;
 
         Url url = urlRepository.findByShortUrl(shortUrl)
-                .orElseThrow(() -> new NotFoundException("Short URL not found: " + shortUrl,HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new NotFoundException("Short URL not found: " + shortUrl));
 
         url.setExpirationTime(LocalDateTime.now().plusMinutes(expirationMinutes));
         Url updatedUrl = urlRepository.save(url);
